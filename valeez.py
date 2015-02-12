@@ -2,10 +2,14 @@ import json
 import requests
 import csv
 import datetime
+import os
+
+WUNDERGROUND_API_KEY = os.environ['WUNDERGROUND_API_KEY']
+API_URL = "http://api.wunderground.com/api/"+WUNDERGROUND_API_KEY+"/forecast10day/q/"
 
 city_destination = {
 	"Boston" : "MA/Boston",
-	"New York" : "NY/New_York",
+	"New York" : ["NY/New_York", "/static/img/newyork.jpg"],
 	"Los Angeles" : "CA/Los_Angeles",
 	"San Francisco" : "CA/San_Francisco",
 	"Washington, DC" : "DC/Washington",
@@ -14,7 +18,7 @@ city_destination = {
 	"London, UK" : "UK/London",
 	"Mexico City, MX" : "MX/mexico_city",
 	"Mumbai, IN" : "IN/Mumbai",
-	"Paris, FR" : "France/Paris",
+	"Paris, FR" : ["France/Paris", "/static/img/paris.jpg"],
 	"Rio de Janeiro, BR" : "BR/rio_de_janeiro",
 	"Rome, IT" : "IT/Rome",
 	"Tokyo, JP" : "JY/Tokyo"
@@ -35,24 +39,16 @@ def today():
 	today_month = today.month
 	return today_date, today_month
 
-API_URL = "http://api.wunderground.com/api/ca5b10fb7297c6da/forecast10day/q/"
+
 
 def inputs(today_month, today_date):
 	user_destination = raw_input('where are you going?')
 	user_destination_api = city_destination.get(user_destination)
 	user_depart_date = int(raw_input('what day are you leaving?'))
-	# if user_depart_date > today_date + 9:
-	# 	print "Date out of range, try a different date"
-	# 	user_depart_date = int(raw_input('what day are you leaving?'))
-	# else:
-	# 	continue
+
 
 	user_depart_month = int(raw_input('what month are you leaving?'))
-	# if user_depart_month != today_month:
-	# 	print "Date out of range, try a different month"
-	# 	user_depart_month = int(raw_input('what month are you leaving?'))
-	# else: 
-	# 	continue
+
 
 
 	user_number_days = int(raw_input('how long is your trip, in days?'))
