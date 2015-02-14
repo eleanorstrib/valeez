@@ -1,5 +1,5 @@
 import json
-import requests
+# import request
 import csv
 import datetime
 import os
@@ -8,20 +8,20 @@ WUNDERGROUND_API_KEY = os.environ['WUNDERGROUND_API_KEY']
 API_URL = "http://api.wunderground.com/api/"+WUNDERGROUND_API_KEY+"/forecast10day/q/"
 
 city_destination = {
-	"Boston" : "MA/Boston",
-	"New York" : ["NY/New_York", "/static/img/newyork.jpg"],
-	"Los Angeles" : "CA/Los_Angeles",
-	"San Francisco" : "CA/San_Francisco",
-	"Washington, DC" : "DC/Washington",
-	"Berlin, DE" : "Germany/Berlin",
-	"Cairo, EG" :"EG/Cairo",
-	"London, UK" : "UK/London",
-	"Mexico City, MX" : "MX/mexico_city",
-	"Mumbai, IN" : "IN/Mumbai",
+	"Boston, US" : ["MA/Boston"],
+	"New York , US" : ["NY/New_York", "/static/img/newyork.jpg"],
+	"Los Angeles, US" : ["CA/Los_Angeles"],
+	"San Francisco, US" : ["CA/San_Francisco"],
+	"Washington, DC" : ["DC/Washington"],
+	"Berlin, DE" : ["Germany/Berlin"],
+	"Cairo, EG" :["EG/Cairo"],
+	"London, UK" : ["UK/London"],
+	"Mexico City, MX" : ["MX/mexico_city"],
+	"Mumbai, IN" : ["IN/Mumbai"],
 	"Paris, FR" : ["France/Paris", "/static/img/paris.jpg"],
-	"Rio de Janeiro, BR" : "BR/rio_de_janeiro",
-	"Rome, IT" : "IT/Rome",
-	"Tokyo, JP" : "JY/Tokyo"
+	"Rio de Janeiro, BR" : ["BR/rio_de_janeiro"],
+	"Rome, IT" : ["IT/Rome"],
+	"Tokyo, JP" : ["JY/Tokyo"]
 }
 
 #lists and dictionaries the functions below will fill in

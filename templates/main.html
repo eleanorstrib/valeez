@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head profile="http://www.w3.org/2005/10/profile">
+		<link rel="icon" 
+    	type="image/png" 
+      	href="../static/img/favicon.ico">
+      	<!-- javascript file -->
+      	<meta charset="utf-8">
+      	<title>Valeez - pack your bags!</title>
+      	<script type="text/javascript" src="../static/script.js"></script>
+
+      	<!--jquery files-->
+      	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  		<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+		<!--start css-->
+		<link rel="stylesheet" type="text/css" href="../static/styles.css">
+
+		<!--start bootstrap cdn links-->
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		<!--fonts-->
+		<link href='http://fonts.googleapis.com/css?family=Lily+Script+One' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,900' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+
+		<!-- begin top nav -->
+		<nav "navbar navbar-default navbar-static-top" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+				<a class="nav navbar-brand nav-brand" href="#">Valeez</a>
+					<ul class="nav navbar-nav">
+						<li><a class="nav-link" href="#howitworks">how it works</a></li>
+						<li><a class="nav-link" href="#about">about</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- first row, with form element -->
+		<div class="container-fluid" id="pack-background">
+			<div class="row title-row title-style"> <!--row1-->
+
+				<div class="col-md-1"></div><!--column spacer-->
+				<div class="col-md-6">
+						<p>
+						Ready to go?<br/>
+						Use <strong>Valeez</strong> to pack your bags!
+						</p><p></p>
+				</div>
+				<div class="col-md-1"></div><!--column spacer-->
+				<div class="col-md-4"></div><!--empty space for graphic-->
+				
+			</div> <!-- row1 end-->
+
+			<div class="row form-row"><!--row2-->
+				<div class="col-md-1"></div><!--column spacer-->
+				<div class="col-md-6 label-style">
+					<div class="col-md-2">
+						<form action="/get packing" name="get-packing">
+						<label>Destination: 
+					</div>
+					<div class="col-md-4">
+						<select>
+						{% for key, value in city_dict|dictsort(false, 'key') %}
+						<option value="{{ value[0] }}">{{ key }}</option>
+						{% endfor %}
+						</select></label>
+					</div>
+				</div>
+				<div class="col-md-1"></div><!--column spacer-->
+				<div class="col-md-4"></div><!--empty space for graphic-->
+			</div><!--row2 end-->
+
+			<div class="row form-row"><!--row3-->
+				<div class="col-md-1"></div><!--column spacer-->
+				<div class="col-md-6 label-style">
+					<div class="col-md-2">
+						<label>Dates:
+					</div>
+					<div class="col-md-4">
+						<select>
+						<option value="blah">blah</option>
+							</select></label>
+							<label>to
+							<select>
+							<option value="blah">blah</option>
+							</select></label>
+					</div>
+				</div>
+				<div class="col-md-1"></div><!--column spacer-->
+				<div class="col-md-4"></div><!--empty space for graphic-->
+			</div><!--row3 end-->
+
+			<div class="row form-row"><!--row4-->
+				<div class="col-md-1"></div><!--column spacer-->
+				<div class="col-md-6 label-style">
+					<div class="col-md-2">
+						<label>Trip type:
+					</div>
+					<div class="col-md-4">
+						<select>
+						<option value="blah">blah</option>
+						</select></label>
+					</div>
+										
+				</div>
+				<div class="col-md-1"></div><!--column spacer-->
+				<div class="col-md-4"></div><!--empty space for graphic-->
+			</div><!--row4 end-->
+
+			<div class="row form-row"><!--row5-->
+				<div class="col-md-1"></div><!--column spacer-->
+				<div class="col-md-6 label-style">
+					<div class="col-md-2">
+						<label>Dress as a: 
+					</div>
+					<div class="col-md-4">
+						<select>
+						<option value="blah">blah</option>
+						</select></label>
+					</div><p></p>
+										
+				</div>
+				<div class="col-md-1"></div><!--column spacer-->
+				<div class="col-md-4"></div><!--empty space for graphic-->
+			</div><!--row5 end-->
+
+			<div class="row"><!--row6-->
+				<div class="col-md-1"></div><!--column spacer-->
+				<div class="col-md-6 button-row">
+					<button type="submit" value="submit" class="btn btn-success">
+						Get packing!
+					</button>
+					</form>	 <!--ending the get-packing form -->	
+				</div>
+				<div class="col-md-1"></div><!--column spacer-->
+				<div class="col-md-4"></div><!--empty space for graphic-->
+			</div><!--row6 end-->
+
+		</div>
+	</body>
+		
+</html>
