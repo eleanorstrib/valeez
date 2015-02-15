@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html>
 	<head profile="http://www.w3.org/2005/10/profile">
+		<meta charset="utf-8">
 		<link rel="icon" 
     	type="image/png" 
       	href="../static/img/favicon.ico">
-      	<!-- javascript file -->
-      	<meta charset="utf-8">
+      	
       	<title>Valeez - pack your bags!</title>
-      	<script type="text/javascript" src="../static/script.js"></script>
 
-      	<!--jquery files-->
-      	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      	<!--jquery link-->
+      	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
 		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  		<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+		<script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 
-		<!--start css-->
-		<link rel="stylesheet" type="text/css" href="../static/styles.css">
+		<!--bootstrap-->
+			<!-- Latest compiled and minified CSS -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
-		<!--start bootstrap cdn links-->
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-		<!-- Optional theme -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-		<!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+			<!-- Optional theme -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+			<!-- Latest compiled and minified JavaScript -->
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+		<!--custom JS and css files-->
+      	<script type="text/javascript" src="../static/script.js"></script>
+      	<link rel="stylesheet" href="../static/styles.css">
+
 		<!--fonts-->
 		<link href='http://fonts.googleapis.com/css?family=Lily+Script+One' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Lato:400,900' rel='stylesheet' type='text/css'>
@@ -67,7 +68,7 @@
 						<form action="/get packing" name="get-packing">
 						<label>Destination: 
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-4 dropdown-style">
 						<select>
 						{% for key, value in city_dict|dictsort(false, 'key') %}
 						<option value="{{ value[0] }}">{{ key }}</option>
@@ -86,13 +87,11 @@
 						<label>Dates:
 					</div>
 					<div class="col-md-4">
-						<select>
-						<option value="blah">blah</option>
-							</select></label>
-							<label>to
-							<select>
-							<option value="blah">blah</option>
-							</select></label>
+						<label>
+							<input type="text" id="depart-date" class="date-picker">
+							to
+							<input type="text" id="return-date" class="date-picker">
+						</label>
 					</div>
 				</div>
 				<div class="col-md-1"></div><!--column spacer-->
@@ -107,7 +106,9 @@
 					</div>
 					<div class="col-md-4">
 						<select>
-						<option value="blah">blah</option>
+						<option value="formal">Formal business trip</option>
+						<option value="casual">Casual business trip</option>
+						<option value="vacation">Vacation</option>
 						</select></label>
 					</div>
 										
@@ -124,7 +125,8 @@
 					</div>
 					<div class="col-md-4">
 						<select>
-						<option value="blah">blah</option>
+						<option value="woman">Woman</option>
+						<option value="woman">Man</option>
 						</select></label>
 					</div><p></p>
 										
