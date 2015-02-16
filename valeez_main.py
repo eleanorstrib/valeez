@@ -1,15 +1,15 @@
 import json
-# import request
 import csv
 import datetime
 import os
+import control
 
 WUNDERGROUND_API_KEY = os.environ['WUNDERGROUND_API_KEY']
 API_URL = "http://api.wunderground.com/api/"+WUNDERGROUND_API_KEY+"/forecast10day/q/"
 
 city_destination = {
 	"Boston, US" : ["MA/Boston"],
-	"New York , US" : ["NY/New_York", "/static/img/newyork.jpg"],
+	"New York, US" : ["NY/New_York", "/static/img/newyork.jpg"],
 	"Los Angeles, US" : ["CA/Los_Angeles"],
 	"San Francisco, US" : ["CA/San_Francisco"],
 	"Washington, DC" : ["DC/Washington"],
@@ -42,22 +42,20 @@ def today():
 
 
 def inputs(today_month, today_date):
-	user_destination = raw_input('where are you going?')
+	user_destination = control.get_packing(destination)
 	user_destination_api = city_destination.get(user_destination)
-	user_depart_date = int(raw_input('what day are you leaving?'))
+	user_depart_date = control.get_packing(depart_date)
+	user_return_date = control.get_packing(return_date)
 
 
-	user_depart_month = int(raw_input('what month are you leaving?'))
+	# user_depart_month = int(raw_input('what month are you leaving?'))
 
 
 
-	user_number_days = int(raw_input('how long is your trip, in days?'))
-	user_sex = raw_input('male or female (enter m or f)?')
-	user_biz = raw_input('is this a business formal, business casual or vacation trip (enter f, c, v)?')
+	user_number_days = user_return_date - user_depart_date
+	user_sex = control.get_packing(gender)
+	user_biz = control.get_packing(trip_type)
 	return user_destination_api, user_destination, user_depart_date, user_depart_month, user_number_days, user_sex, user_biz
-
-
-
 
 API_URL = "http://api.wunderground.com/api/ca5b10fb7297c6da/forecast10day/q/"
 

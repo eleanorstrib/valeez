@@ -65,13 +65,14 @@
 				<div class="col-md-1"></div><!--column spacer-->
 				<div class="col-md-6 label-style">
 					<div class="col-md-2">
-						<form action="/get packing" name="get-packing">
+						<form action="/getpacking" method="get" name="getpacking">
 						<label>Destination: 
 					</div>
+
 					<div class="col-md-4 dropdown-style">
-						<select>
+						<select name="city">
 						{% for key, value in city_dict|dictsort(false, 'key') %}
-						<option value="{{ value[0] }}">{{ key }}</option>
+						<option value="{{ value[0] }}" name="city">{{ key }}</option>
 						{% endfor %}
 						</select></label>
 					</div>
@@ -88,9 +89,9 @@
 					</div>
 					<div class="col-md-4">
 						<label>
-							<input type="text" id="depart-date" class="date-picker">
+							<input type="text" id="depart-date" class="date-picker" name="depart_date">
 							to
-							<input type="text" id="return-date" class="date-picker">
+							<input type="text" id="return-date" class="date-picker" name="return_date">
 						</label>
 					</div>
 				</div>
@@ -105,7 +106,7 @@
 						<label>Trip type:
 					</div>
 					<div class="col-md-4">
-						<select>
+						<select name="trip_type">
 						<option value="formal">Formal business trip</option>
 						<option value="casual">Casual business trip</option>
 						<option value="vacation">Vacation</option>
@@ -124,9 +125,9 @@
 						<label>Dress as a: 
 					</div>
 					<div class="col-md-4">
-						<select>
-						<option value="woman">Woman</option>
-						<option value="woman">Man</option>
+						<select name="gender">
+						<option value="female">Woman</option>
+						<option value="male">Man</option>
 						</select></label>
 					</div><p></p>
 										
@@ -147,7 +148,19 @@
 				<div class="col-md-4"></div><!--empty space for graphic-->
 			</div><!--row6 end-->
 
-		</div>
+		</div><!--end of form section-->
+
+
+		<div id="get-packing"><!--beginning of results section-->
+		This is the get packing section
+		</div> <!--beginning of results section-->
+
+
+		<div id="how-it-works"><!--beginning of how it works section-->
+		</div> <!--end of how it works section-->
+
+		<div id="about"><!--beginning of about section-->
+		</div> <!--end of about section-->
 	</body>
 		
 </html>
