@@ -1,0 +1,27 @@
+<html>
+
+<head>
+	<title>blah
+	</title>
+	<!--custom JS and css files-->
+      	<script type="text/javascript" src="../static/script.js"></script>
+      	<link rel="stylesheet" href="../static/styles.css">
+    <!--fonts-->
+		<link href='http://fonts.googleapis.com/css?family=Lily+Script+One' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,900' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+Get packing for your {{ user_number_days }} day trip to
+<div class="fancy-title">{{ city_clean }}</div>
+from {{ depart_date }} to {{ return_date }}
+<p>
+High {{ get_the_weather[3] }}&degF &nbsp|&nbsp Low {{ get_the_weather[4] }}&degF
+</p>
+
+{% for item in make_the_valeez %}
+	{{ item[0] }}x {{ item[1] }} <br />
+{% endfor %}
+
+</body>
+</html>

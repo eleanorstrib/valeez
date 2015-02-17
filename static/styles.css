@@ -1,8 +1,9 @@
 
 body {
-	font-size: 62.5%;
+	font-size: 95%;
   padding: 0px;
   margin-top: 0px;
+  font-family:'Lato', sans-serif;
 }
 
 .navbar {
@@ -20,6 +21,11 @@ body {
   color: #009999 !important;
   font-size: 15px !important;
   text-align: right;
+}
+
+.fancy-title {
+  font-family: 'Lily Script One', cursive;
+  font-size: 2em;
 }
 
 ul.nav a:hover {
@@ -73,6 +79,14 @@ select {
 
 .btn {
   border-radius: 0px;
-  font-family: 'Lily Script One', cursive;
   font-family:'Lato', sans-serif;
+}
+
+.valeez-items {
+    width:23%;
+    height:23vw;    
+    margin:1%;
+    float:left;
+    background:gold;
+    width: 0.25em;
 }
