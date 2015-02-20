@@ -1,6 +1,8 @@
 from flask import Flask, render_template, session, redirect, request, url_for
 import valeez_main as valeez
 from datetime import date, datetime
+import json
+from flask.json import jsonify
 import jinja2
 import os
 
@@ -40,11 +42,18 @@ def get_packing():
 	make_the_valeez = valeez.make_the_valeez(get_the_weather[0], get_the_weather[1], gender, trip_type, user_number_days)
 	print make_the_valeez
 
-	return render_template("hello.html", city = city,
-		 depart_date=depart_date, return_date = return_date, 
-		 user_number_days = user_number_days, trip_type = trip_type, 
-		 city_clean = city_clean, get_the_weather=get_the_weather, 
-		 make_the_valeez=make_the_valeez)
+
+	packing = {
+		'city': city,
+		'depart_date': depart_date,
+		'return_date': return_date,
+		'user_number_days': user_number_days,
+		'trip_type': trip_type,
+		'city_clean': city_clean,
+		'get_the_weather': get_the_weather,
+		'make_the_valeez': make_the_valeez,
+	}
+	return jsonify(packing)
 
 if __name__ == "__main__":
 	app.run(debug=True)

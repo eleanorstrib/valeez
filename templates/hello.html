@@ -12,16 +12,24 @@
 </head>
 
 <body>
-Get packing for your {{ user_number_days }} day trip to
-<div class="fancy-title">{{ city_clean }}</div>
-from {{ depart_date }} to {{ return_date }}
-<p>
-High {{ get_the_weather[3] }}&degF &nbsp|&nbsp Low {{ get_the_weather[4] }}&degF
-</p>
+<div class="city-header" style="background-image: url({{city_dict[city_clean][1]}}); background-position:center;">
+	<p>
+		Get packing for your {{ user_number_days }} day trip to
+		<div class="fancy-title">{{ city_clean }}</div>
+			from {{ depart_date }} to {{ return_date }}
+			<p>
+			High {{ get_the_weather[3] }}&degF &nbsp|&nbsp Low {{ get_the_weather[4] }}&degF &nbsp|&nbsp Max POP {{ get_the_weather[5] }}%
+			</p>
+			</p>
+			</style>
+		</div>
 
-{% for item in make_the_valeez %}
-	{{ item[0] }}x {{ item[1] }} <br />
-{% endfor %}
-
+		{% for item in make_the_valeez %}
+			<div class="pack-item">
+				<p class="number-item">{{ item[0] }}x<br />
+				{{ item[1] }} </p>
+			</div>
+		{% endfor %}
+</div>
 </body>
 </html>

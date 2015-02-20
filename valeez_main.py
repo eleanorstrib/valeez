@@ -9,13 +9,13 @@ API_URL = "http://api.wunderground.com/api/"+WUNDERGROUND_API_KEY+"/forecast10da
 
 city_destination = {
 	"Boston, US" : ["MA/Boston"],
-	"New York, US" : ["NY/New_York", "/static/img/newyork.jpg"],
+	"New York, US" : ["NY/New_York", "./static/img/newyork.jpg"],
 	"Los Angeles, US" : ["CA/Los_Angeles"],
 	"San Francisco, US" : ["CA/San_Francisco"],
 	"Washington, DC" : ["DC/Washington"],
 	"Berlin, DE" : ["Germany/Berlin"],
 	"Cairo, EG" :["EG/Cairo"],
-	"London, UK" : ["UK/London"],
+	"London, UK" : ["UK/London","./static/img/london.jpg"],
 	"Mexico City, MX" : ["MX/mexico_city"],
 	"Mumbai, IN" : ["IN/Mumbai"],
 	"Paris, FR" : ["France/Paris", "/static/img/paris.jpg"],
@@ -110,9 +110,10 @@ def get_the_weather(all_calendar_days, user_destination_api):
 
 	
 	high_temp_f = max(all_high_temps_f)
-	low_temp_f = max(all_low_temps_f)
+	low_temp_f = min(all_low_temps_f)
+	avg_pop = max(all_pop_pct)
 	
-	return (all_high_temps_f, all_low_temps_f, all_pop_pct, high_temp_f, low_temp_f)
+	return (all_high_temps_f, all_low_temps_f, all_pop_pct, high_temp_f, low_temp_f, avg_pop)
 
 def make_the_valeez(all_high_temps_f, all_pop_pct, user_sex, user_biz, user_number_days):
 	avg_high_temps_f = sum(all_high_temps_f)/len(all_calendar_days)

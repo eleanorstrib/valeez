@@ -7,19 +7,19 @@ body {
 }
 
 .navbar {
-  margin-bottom: 0 !important;
+  margin-bottom: 0;/**/
 }
 
 .nav-brand {
   font-family: 'Lily Script One', cursive;
-  color: #009999 !important;
-  font-size: 30px !important;
+  color: #009999 ;/**/
+  font-size: 30px ;/**/
 }
 
 .nav-link {
   font-family: 'Lily Script One', cursive;
-  color: #009999 !important;
-  font-size: 15px !important;
+  color: #009999;  /**/
+  font-size: 15px;
   text-align: right;
 }
 
@@ -29,7 +29,8 @@ body {
 }
 
 ul.nav a:hover {
-  color:#80CCCC !important;
+  color:#FFFFFF;
+  background-color: #009999;
   text-align: center;
   text-align: right;
 }
@@ -42,12 +43,12 @@ ul.nav a:hover {
 
 .title-style {
   font-family:'Lato', sans-serif;
-  font-size: 30px !important;
+  font-size: 30px;
 }
 
 .label-style {
   font-family:'Lato', sans-serif;
-  font-size: 15px !important;
+  font-size: 15px;
 }
 
 .title-row {
@@ -82,11 +83,25 @@ select {
   font-family:'Lato', sans-serif;
 }
 
-.valeez-items {
-    width:23%;
-    height:23vw;    
+.pack-item {
+    width:20%;
+    height:15%;    
     margin:1%;
     float:left;
-    background:gold;
-    width: 0.25em;
+    background:red;
+    width: 1em;
+    padding: 5px;
+}
+
+.number-item {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+div.city-header {
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  background-image: no-repeat;
 }
