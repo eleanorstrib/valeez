@@ -15,7 +15,8 @@ def index():
 	city_dict = valeez.city_destination
 	return render_template("main.html", city_dict=city_dict)
 
-@app.route("/getpacking")
+# /getpacking?city=Germany/Berlin&depart_date=03/03/2015&return_date=03/03/2015&trip_type=formal&gender=female
+@app.route("/getpacking", methods=["GET"])
 def get_packing():
 	#destination
 	city = request.args.get("city")
@@ -24,11 +25,16 @@ def get_packing():
 	city_clean = str([key for key, value in city_dict.items() if value[0] == city])
 	city_clean = city_clean.translate(None, "[]'")
 	# dates
-	depart_date = request.args.get("depart_date")
+
+	depart_date = request.args.get("depart_date", "03/02/2015")
+	print depart_date
+	
 	depart_date_time = datetime.strptime(depart_date, "%m/%d/%Y")
 	user_depart_month = depart_date_time.month
 	user_depart_date = depart_date_time.day
-	return_date = request.args.get("return_date")
+	return_date = request.args.get("return_date", "03/05/2015")
+	print return_date
+	
 	return_date_time = datetime.strptime(return_date, "%m/%d/%Y")
 	user_number_days = (return_date_time-depart_date_time).days
 	#other variables

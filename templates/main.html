@@ -50,7 +50,7 @@
 			<div class="row title-row title-style"> <!--row1-->
 
 				<div class="col-md-1"></div><!--column spacer-->
-				<div class="col-md-6">
+				<div class="col-md-6 col-xs-6">
 						<p>
 						Ready to go?<br/>
 						Use <strong>Valeez</strong> to pack your bags!
@@ -65,14 +65,14 @@
 				<div class="col-md-1"></div><!--column spacer-->
 				<div class="col-md-6 label-style">
 					<div class="col-md-2">
-						<form action="/getpacking" method="get" name="getpacking">
+					<form action="/getpacking" method="GET" name="getpacking">
 						<label>Destination: 
 					</div>
 
 					<div class="col-md-4 dropdown-style">
 						<select name="city">
 						{% for key, value in city_dict|dictsort(false, 'key') %}
-						<option value="{{ value[0] }}" name="city">{{ key }}</option>
+						<option value="{{ value[0] }}" name="city" id="city-field">{{ key }}</option>
 						{% endfor %}
 						</select></label>
 					</div>
@@ -106,7 +106,7 @@
 						<label>Trip type:
 					</div>
 					<div class="col-md-4">
-						<select name="trip_type">
+						<select name="trip_type" id="trip-type">
 						<option value="formal">Formal business trip</option>
 						<option value="casual">Casual business trip</option>
 						<option value="vacation">Vacation</option>
@@ -125,7 +125,7 @@
 						<label>Dress as a: 
 					</div>
 					<div class="col-md-4">
-						<select name="gender">
+						<select name="gender" id="gender">
 						<option value="female">Woman</option>
 						<option value="male">Man</option>
 						</select></label>
@@ -139,10 +139,10 @@
 			<div class="row"><!--row6-->
 				<div class="col-md-1"></div><!--column spacer-->
 				<div class="col-md-6 button-row">
-					<button type="submit" value="submit" class="btn btn-success" id="get-packing-button">
+				<button type="submit" class="btn" id="get-packing-button">
 						Get packing!
-					</button>
-					</form>	 <!--ending the get-packing form -->	
+				</button>
+				</form>	 <!--ending the get-packing form -->	
 				</div>
 				<div class="col-md-1"></div><!--column spacer-->
 				<div class="col-md-4"></div><!--empty space for graphic-->

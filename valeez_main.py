@@ -1,6 +1,7 @@
 import json
 import csv
-import datetime
+import time
+from datetime import datetime
 import requests
 import os
 
